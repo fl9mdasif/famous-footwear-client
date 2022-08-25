@@ -3,11 +3,13 @@ import { ToastContainer } from 'react-toastify';
 import 'boxicons';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home/Home';
+import Navbar from './Components/Shared/Navbar';
 
 function App() {
 
   return (
     <div className="">
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/' element={<Home />} />
