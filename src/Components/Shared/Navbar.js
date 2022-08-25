@@ -18,8 +18,8 @@ const Navbar = () => {
         <>
             <li><Link to='/' href="#2">Home</Link></li>
             <li><Link to='/shoes' >Shop</Link></li>
-            <li><Link to='/addshoes' >AddShoes</Link></li>
-            <li><Link to='/manageshoes' >ManageShoes</Link></li>
+            {/* <li><Link to='/addshoes' >AddShoes</Link></li>
+            <li><Link to='/manageshoes' >ManageShoes</Link></li> */}
             <li><Link to='/myitems' >myItems</Link></li>
 
 
