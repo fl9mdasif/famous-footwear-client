@@ -7,9 +7,9 @@ const Footer = () => {
             <footer class="text-gray-600 body-font">
                 <div class=" flex gap-x-1 justify-around px-5 pt-24   md:items-center lg:items-star md:flex-row md:flex-nowrap flex-wrap flex-col ">
 
-                    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                    <div class="w-80 pl-6 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <a href='/' class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <a href='/' className=" bg-base pl-3 font-bold text-head normal-case text-xl" >
+                            <a href='/' className=" bg- pl-3 font-bold text-head normal-case text-xl" >
                                 <img style={{
                                     height: '40px',
                                     width: '100%',
@@ -23,7 +23,7 @@ const Footer = () => {
                             </span>
 
                         </a>
-                        <p class="mt-2 text-sm text-gray-500">
+                        <p class="mt-2  px-6 text-sm text-gray-500">
                             Elite Communication Limited.
                             House# 06, Road# 17/A, Block# E, Banani, 1213 Dhaka, Bangladesh
                             Dedicated Support: +8801955-445588
@@ -110,7 +110,7 @@ const Footer = () => {
                 </div>
 
                 {/* bottom footer  */}
-                <div class="bg-gray-100">
+                <div class="bg-green">
                     <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                         <p class="text-gray-500 text-sm text-center sm:text-left">© 2022 fl9mdasif.
 

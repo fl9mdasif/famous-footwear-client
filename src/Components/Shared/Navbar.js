@@ -1,16 +1,17 @@
-// import { signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import React from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-// import auth from '../../Firebase.init'
+import auth from '../../Firebase.init';
+
 
 const Navbar = () => {
 
-    // const [user] = useAuthState(auth);
-    // const handleSignOut = () => {
-    //     signOut(auth)
-    // }
-    // const photoUrl = user?.reloadUserInfo?.photoUrl;
+    const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth)
+    }
+    const photoUrl = user?.reloadUserInfo.photoUrl;
     // console.log(user);
     // console.log(photoUrl)
 
@@ -18,35 +19,13 @@ const Navbar = () => {
         <>
             <li><Link to='/' href="#2">Home</Link></li>
             <li><Link to='/shoes' >Shop</Link></li>
-            {/* <li><Link to='/addshoes' >AddShoes</Link></li>
-            <li><Link to='/manageshoes' >ManageShoes</Link></li> */}
-            <li><Link to='/myitems' >myItems</Link></li>
-
-
-
-            {/* <button className="btn btn-primary text-white border-none shadow-md bg-gradient-to-r  from-secondary to-primary"> Sign Out</button> */}
-            <li>
-                <button>
-                    <span className="flex items-center text-text ">
-
-                        Sign Out
-                        <span> <img style={{
-                            height: '40px',
-                            width: '40px',
-                            borderRadius: '50%',
-                            marginLeft: '10px'
-                        }} src='https://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png' alt="" />  </span>
-                    </span>
-                </button>
-            </li>
-
-            <li><Link to='/login' >Login</Link></li>
-
+            {user && <li><Link to='/addshoes' >AddShoes</Link></li>}
+            {user && <li><Link to='/manageshoes' >ManageShoes</Link></li>}
         </>
 
     return (
         <div>
-            <div className="navbar bg-base text-text ">
+            <div className="navbar bg-green text-text ">
                 <div className="navbar-start">
                     <div className="dropdown bg-red-100">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -57,7 +36,7 @@ const Navbar = () => {
 
                         </ul >
                     </div >
-                    <a href="/" className=" -16 bg-base pl-3 font-bold text-head normal-case text-xl" >
+                    <a href="/" className=" -16 bg- pl-3 font-bold text-head normal-case text-xl" >
                         <img style={{
                             height: '40px',
                             width: '100%',
@@ -67,16 +46,70 @@ const Navbar = () => {
                             src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
                     </a >
                 </div >
-                <div className="navbar-end hidden lg:flex " >
-                    <ul className="menu menu-horizontal" >
+                <div className="navbar-center hidden lg:flex " >
+                    <ul className="menu  text-white menu-horizontal" >
                         {menuItems}
                     </ul >
                 </div >
-                {/* <div className="navbar-end">
-                    <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label >
-                </div> */}
+                <div className="navbar-end pr-4">
+
+                    {/* DropDown user photo and login dropdown   */}
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class=" m-1">
+                            {
+                                user ?
+                                    <button>
+                                        <span>
+                                            <img className='userImg' style={{
+                                                height: '40px',
+                                                width: '40px',
+                                                borderRadius: '50%',
+                                                marginLeft: '10px'
+                                            }} src={photoUrl} alt="" />  </span>
+                                    </button>
+                                    :
+
+                                    <button>
+                                        <span>
+                                            <img className='userImg' style={{
+                                                height: '40px',
+                                                width: '40px',
+                                                borderRadius: '50%',
+                                                marginLeft: '10px'
+                                            }} src='https://cdn-icons-png.flaticon.com/512/149/149071.png' alt="" />
+                                        </span>
+                                    </button>
+                            }
+                        </label>
+
+                        {/* dropdown list   */}
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+
+                            {user && <li li > <Link to='/myitems' >My Items</Link></li>}
+
+                            {
+                                user ?
+                                    <li>
+                                        <button>
+                                            <span onClick={handleSignOut} className="flex items-center text-text ">
+                                                Sign Out
+                                                <span> <img style={{
+                                                    height: '40px',
+                                                    width: '40px',
+                                                    borderRadius: '50%',
+                                                    marginLeft: '10px'
+                                                }} src={photoUrl} alt="" />  </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    :
+                                    <li><Link to='/login' >Login</Link></li>
+                            }
+
+                        </ul>
+                    </div>
+
+                </div>
 
             </div >
         </div >
