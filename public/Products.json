@@ -1,0 +1,26 @@
+[
+    {
+        "name": "shoe1",
+        "imgUrl": "https://i.ibb.co/sm8kM3w/pedals.jpg",
+        "description": "Race Face Ride Composite Bike Pedals",
+        "price": "35000",
+        "min_order": "100",
+        "available": "1590"
+    },
+    {
+        "name": "Shoe2",
+        "imgUrl": "https://i.ibb.co/FX6VBm2/chainjpg.jpg",
+        "description": "This professional 116-Link chain can be used as a replacement for your old or worn one of your bicycle",
+        "price": "25000",
+        "min_order": "100",
+        "available": "1590"
+    },
+    {
+        "name": "Shoe3",
+        "imgUrl": "https://i.ibb.co/F5vFwQT/seats.jpg",
+        "description": "Specialized Power Expert Cycling Bike Saddle/Seat",
+        "price": "20000",
+        "min_order": "100",
+        "available": "1590"
+    }
+]

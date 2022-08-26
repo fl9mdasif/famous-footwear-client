@@ -13,6 +13,7 @@ import ManageShoes from './Components/Products/ManageShoes';
 import ShoeDetails from './Components/Products/ShoeDetails';
 import MyItems from './Components/Products/MyItems';
 import NotFound from './Components/Shared/NotFound';
+import Prac from './Components/Prac';
 
 function App() {
 
@@ -23,10 +24,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/prac' element={<Prac />} />
 
         {/* shoe store && user facilities   */}
         <Route path='/allshoes' element={<AllShoes />} />
-        <Route path='/shoedetails' element={<ShoeDetails />} />
+        <Route path='/product/:ID' element={<ShoeDetails />} />
 
         <Route path='/addshoe' element={<AddShoe />} />
         <Route path='/manageshoes' element={<ManageShoes />} />

@@ -27,3 +27,11 @@
         opacity: 1;
     }
 }
+
+.productImg {
+    padding: 10px;
+    width: 240px;
+    height: 200px;
+    border: 2px solid sandybrown;
+    object-fit: cover;
+}

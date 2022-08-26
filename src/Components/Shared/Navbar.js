@@ -21,6 +21,7 @@ const Navbar = () => {
         <>
             <li><Link to='/' href="#2">Home</Link></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
+            <li><Link to='/prac' >Prac</Link></li>
             {user && <li><Link to='/addshoe' >AddShoe</Link></li>}
             {user && <li><Link to='/manageshoes' >ManageShoes</Link></li>}
         </>
@@ -62,30 +63,34 @@ const Navbar = () => {
                             {
                                 user ?
                                     <button>
-                                        <div class="hover13 column">
-                                            <figure>
-                                                <img className='userImg' style={{
-                                                    height: '42px',
-                                                    width: '42px',
-                                                    borderRadius: '50%',
-                                                    marginLeft: '10px',
-                                                    padding: '2px',
-                                                    border: '2px solid #c5c5c5 '
+                                        <div class="avatar online">
+                                            <div class=" rounded-full hover13 column">
+                                                <figure>
+                                                    <img className='avatar online userImg' style={{
+                                                        height: '42px',
+                                                        width: '42px',
+                                                        borderRadius: '50%',
+                                                        marginLeft: '10px',
+                                                        padding: '2px',
+                                                        border: '2px solid #c5c5c5 '
 
-                                                }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />
-                                            </figure>
+                                                    }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />
+                                                </figure>
+                                            </div>
                                         </div>
                                     </button>
                                     :
                                     <button>
-                                        <span>
-                                            <img className='userImg' style={{
-                                                height: '42px',
-                                                width: '42px',
-                                                borderRadius: '50%',
-                                                marginLeft: '10px'
-                                            }} src={dummyUserPhoto} alt="" />
-                                        </span>
+                                        <div className="avatar offline">
+                                            <div className=' rounded-full'>
+                                                <img className='userImg' style={{
+                                                    height: '42px',
+                                                    width: '42px',
+                                                    borderRadius: '50%',
+                                                    marginLeft: '10px'
+                                                }} src={dummyUserPhoto} alt="" />
+                                            </div>
+                                        </div>
                                     </button>
                             }
                         </label>
@@ -114,9 +119,9 @@ const Navbar = () => {
                             }
 
                         </ul>
-                    </div>
+                    </div >
 
-                </div>
+                </div >
 
             </div >
         </div >
