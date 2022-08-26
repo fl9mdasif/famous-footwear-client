@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase.init';
 
+import '../../App.css'
 
 const Navbar = () => {
 
@@ -11,6 +12,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOut(auth)
     }
+    const dummyUserPhoto = 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
     const photoUrl = user?.reloadUserInfo.photoUrl;
     // console.log(user);
     // console.log(photoUrl)
@@ -18,14 +20,15 @@ const Navbar = () => {
     const menuItems =
         <>
             <li><Link to='/' href="#2">Home</Link></li>
-            <li><Link to='/shoes' >Shop</Link></li>
-            {user && <li><Link to='/addshoes' >AddShoes</Link></li>}
+            <li><Link to='/allshoes' >Shoes</Link></li>
+            {user && <li><Link to='/addshoe' >AddShoe</Link></li>}
             {user && <li><Link to='/manageshoes' >ManageShoes</Link></li>}
         </>
 
     return (
         <div>
             <div className="navbar bg-green text-text ">
+
                 <div className="navbar-start">
                     <div className="dropdown bg-red-100">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -36,14 +39,14 @@ const Navbar = () => {
 
                         </ul >
                     </div >
+                    {/* mobile dropdown   */}
                     <a href="/" className=" -16 bg- pl-3 font-bold text-head normal-case text-xl" >
                         <img style={{
                             height: '40px',
                             width: '100%',
                             marginLeft: '10px',
                         }}
-                            alt=''
-                            src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
+                            alt='' src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
                     </a >
                 </div >
                 <div className="navbar-center hidden lg:flex " >
@@ -53,30 +56,35 @@ const Navbar = () => {
                 </div >
                 <div className="navbar-end pr-4">
 
-                    {/* DropDown user photo and login dropdown   */}
+                    {/* DropDown user photo and login dropdown end   */}
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class=" m-1">
                             {
                                 user ?
                                     <button>
-                                        <span>
-                                            <img className='userImg' style={{
-                                                height: '40px',
-                                                width: '40px',
-                                                borderRadius: '50%',
-                                                marginLeft: '10px'
-                                            }} src={photoUrl} alt="" />  </span>
+                                        <div class="hover13 column">
+                                            <figure>
+                                                <img className='userImg' style={{
+                                                    height: '42px',
+                                                    width: '42px',
+                                                    borderRadius: '50%',
+                                                    marginLeft: '10px',
+                                                    padding: '2px',
+                                                    border: '2px solid #c5c5c5 '
+
+                                                }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />
+                                            </figure>
+                                        </div>
                                     </button>
                                     :
-
                                     <button>
                                         <span>
                                             <img className='userImg' style={{
-                                                height: '40px',
-                                                width: '40px',
+                                                height: '42px',
+                                                width: '42px',
                                                 borderRadius: '50%',
                                                 marginLeft: '10px'
-                                            }} src='https://cdn-icons-png.flaticon.com/512/149/149071.png' alt="" />
+                                            }} src={dummyUserPhoto} alt="" />
                                         </span>
                                     </button>
                             }
@@ -86,7 +94,6 @@ const Navbar = () => {
                         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 
                             {user && <li li > <Link to='/myitems' >My Items</Link></li>}
-
                             {
                                 user ?
                                     <li>
@@ -94,11 +101,11 @@ const Navbar = () => {
                                             <span onClick={handleSignOut} className="flex items-center text-text ">
                                                 Sign Out
                                                 <span> <img style={{
-                                                    height: '40px',
-                                                    width: '40px',
+                                                    height: '42px',
+                                                    width: '42px',
                                                     borderRadius: '50%',
                                                     marginLeft: '10px'
-                                                }} src={photoUrl} alt="" />  </span>
+                                                }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>
                                             </span>
                                         </button>
                                     </li>
