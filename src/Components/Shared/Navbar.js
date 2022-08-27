@@ -12,6 +12,7 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOut(auth)
     }
+
     const dummyUserPhoto = 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
     const photoUrl = user?.reloadUserInfo.photoUrl;
     // console.log(user);
@@ -66,7 +67,7 @@ const Navbar = () => {
                                         <div class="avatar online">
                                             <div class=" rounded-full hover13 column">
                                                 <figure>
-                                                    <img className='avatar online userImg' style={{
+                                                    <img className=' userImg' style={{
                                                         height: '42px',
                                                         width: '42px',
                                                         borderRadius: '50%',
@@ -74,7 +75,9 @@ const Navbar = () => {
                                                         padding: '2px',
                                                         border: '2px solid #c5c5c5 '
 
-                                                    }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />
+                                                    }}
+                                                        referrerpolicy="no-referrer"
+                                                        src={photoUrl ? photoUrl : dummyUserPhoto} alt="*" />
                                                 </figure>
                                             </div>
                                         </div>
@@ -110,7 +113,9 @@ const Navbar = () => {
                                                     width: '42px',
                                                     borderRadius: '50%',
                                                     marginLeft: '10px'
-                                                }} src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>
+                                                }}
+                                                    referrerpolicy="no-referrer"
+                                                    src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>
                                             </span>
                                         </button>
                                     </li>

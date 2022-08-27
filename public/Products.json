@@ -1,26 +1,96 @@
 [
     {
-        "name": "shoe1",
-        "imgUrl": "https://i.ibb.co/sm8kM3w/pedals.jpg",
-        "description": "Race Face Ride Composite Bike Pedals",
-        "price": "35000",
-        "min_order": "100",
-        "available": "1590"
+        "name": "Tommy Hilfiger Racklin",
+        "imgUrl": "https://i.ibb.co/pZzxf12/01.jpg",
+        "price": "38",
+        "stocks": "28",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "brand": "Lotto",
+        "color": "#383d50"
     },
     {
-        "name": "Shoe2",
-        "imgUrl": "https://i.ibb.co/FX6VBm2/chainjpg.jpg",
-        "description": "This professional 116-Link chain can be used as a replacement for your old or worn one of your bicycle",
-        "price": "25000",
-        "min_order": "100",
-        "available": "1590"
+        "name": "Beverly Hills Polo Club",
+        "imgUrl": "https://i.ibb.co/ykpW4ZW/Beverly-Hills-Polo-Club-Emilio.jpg",
+        "price": "32",
+        "stocks": "18",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11
+        ],
+        "color": "#111111",
+        "brand": "Bata"
     },
     {
-        "name": "Shoe3",
-        "imgUrl": "https://i.ibb.co/F5vFwQT/seats.jpg",
-        "description": "Specialized Power Expert Cycling Bike Saddle/Seat",
-        "price": "20000",
-        "min_order": "100",
-        "available": "1590"
+        "name": "J75 by JUMP Blake Lo",
+        "imgUrl": "https://i.ibb.co/q7j4KTB/J75-by-JUMP-Blake-Lo.jpg",
+        "price": "29",
+        "stocks": "20",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "color": "#111111",
+        "brand": "Apex"
+    },
+    {
+        "name": "Oliver Mason Randy",
+        "imgUrl": "https://i.ibb.co/F0sjBqz/Lamo-Slip-On.jpg",
+        "price": "42",
+        "stocks": "21",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "color": "#8a4b1c",
+        "brand": "Oliver"
+    },
+    {
+        "name": "Savannah Harbor Travis",
+        "imgUrl": "https://i.ibb.co/f1km12V/Savannah-Harbor-Travis.jpg",
+        "price": "55",
+        "stocks": "12",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "color": "#111111",
+        "brand": "Fortune"
+    },
+    {
+        "name": "Oliver Mason Ralph",
+        "imgUrl": "https://i.ibb.co/D9LLPML/Oliver-Mason-Ralph.jpg",
+        "price": "21",
+        "stocks": "24",
+        "size": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "color": "#111111",
+        "brand": "Apex"
     }
 ]
