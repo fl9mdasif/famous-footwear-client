@@ -1,26 +1,75 @@
 import React from 'react';
-
+// Import Swiper React components
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import '../../Components/Home/styles.css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 const Hero = () => {
     return (
-        <div>
-            <section class="text-gray-600 body-font">
-                <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                        <img class="object-cover object-center rounded" alt="hero" src="https://cdn.media.amplience.net/i/scvl/20220824-LargePod2_Desktop-600x600-3x?&$largePodDesktop$" />
-                    </div>
-                    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium uppercase text-gray-900">Casual shoe for man
-                            {/* <br class="hidden lg:inline-block" />readymade gluten */}
-                        </h1>
-                        <p class="mb-8 leading-relaxed">Discover The Season's Must-Have Pieces From Ready-to-Wear Fashion to Stylish Accessories. Take 10% off new arrivals with code WEBSTER10 at checkout. Trendy & Diverse Styles. New Arrivals. Online Exclusives. Markdown Sale. Luxury Designer Brands.</p>
-                        <div class="flex justify-center">
-                            <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                            <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        <>
+            <Swiper
+                spaceBetween={0}
+                // centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    < div div className="relative h-scren w-screen " >
+                        <img className="object-fill sliderImg " src=" https://cdn.shopify.com/s/files/1/0145/5613/5478/files/banner-v3-img2.jpg?v=1565864825" alt="" />
+                        <div className="absolute flex flex-col  justify-start">
+                            <p className="heroP"> Welcome to </p>
+                            <h1 className="heroHead" >Famous Footwear</h1>
+                            <div className=" flex justify-start">
+                                <button className="btn heroBtn text-italic btn-sm bg-base">Buy now</button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+                    </ div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    < div div className="relative h-scren w-screen " >
+                        <img className="object-fill sliderImg " src=" https://cdn.shopify.com/s/files/1/0145/5613/5478/files/banner-v3-img2.jpg?v=1565864825" alt="" />
+                        <div className="absolute flex flex-col  justify-start">
+                            <p className="heroP"> Welcome to </p>
+                            <h1 className="heroHead" >Famous Footwear</h1>
+                            <div className=" flex justify-start">
+                                <button className="btn heroBtn text-italic btn-sm bg-base">Buy now</button>
+                            </div>
+                        </div>
+                    </ div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    < div div className="relative h-scren w-screen " >
+                        <img className="object-fill sliderImg " src=" https://cdn.shopify.com/s/files/1/0145/5613/5478/files/banner-v3-img2.jpg?v=1565864825" alt="" />
+                        <div className="absolute flex flex-col  justify-start">
+                            <p className="heroP"> Welcome to </p>
+                            <h1 className="heroHead" >Famous Footwear</h1>
+                            <div className=" flex justify-start">
+                                <button className="btn heroBtn text-italic btn-sm bg-base">Buy now</button>
+                            </div>
+                        </div>
+                    </ div>
+
+                </SwiperSlide>
+
+
+            </Swiper >
+
+        </>
+
     );
 };
 

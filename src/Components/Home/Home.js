@@ -16,8 +16,6 @@ const Home = () => {
 
     return (
         <div className="">
-
-
             <Hero />
             <ServiceCard />
             <Offers />

@@ -30,7 +30,6 @@
     object-fit: cover;
 }
 
-
 /* hero section starts  */
 /* small device  600px below */
 @media only screen and (max-width: 600px) {
@@ -40,19 +39,34 @@
 
     .absolute {
         position: absolute;
-        top: 65px;
-        right: 22px;
+        top: 75px;
+        left: 42px;
 
     }
 
     .heroHead {
-        font-size: 16px;
-        font-weight: 800;
-        text-align: end;
-        padding-bottom: 10px
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: start;
+        padding-bottom: 10px;
+        font-style: italic;
+
     }
 
-    .heroBtn {}
+    .heroP {
+        color: white;
+        font-size: 14px;
+        text-align: start;
+        /* padding-bottom: 10px; */
+        font-style: italic;
+    }
+
+    .heroBtn {
+        /* background-color: #7031cc !important; */
+    }
+
+
 }
 
 /* large device  600px and up) */
@@ -63,9 +77,31 @@
 
     .absolute {
         position: absolute;
-        top: 200px;
-        right: 50px;
+        top: 180px;
+        left: 100px;
     }
+
+    .sliderImg {
+        height: 100vh !important
+    }
+
+    .heroHead {
+        font-style: italic;
+        color: white;
+        font-size: 50px;
+        font-weight: 800;
+        text-align: start;
+        padding-bottom: 10px
+    }
+
+    .heroP {
+        color: white;
+        font-size: 25px;
+        text-align: start;
+        /* padding-bottom: 10px; */
+        font-style: italic;
+    }
+
 }
 
 /* hero section end  */

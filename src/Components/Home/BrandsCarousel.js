@@ -11,9 +11,9 @@ import nike from '../../../src/assest/BrandsLogo/nike.svg';
 
 import '../../../src/Components/Home/styles.css'
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { SwiperSlide, Swiper } from 'swiper/react';
-import { Pagination, FreeMode, Autoplay } from "swiper";
+import { Navigation, FreeMode, Autoplay } from "swiper";
 
 const BrandsCarousel = () => {
     return (
@@ -22,16 +22,13 @@ const BrandsCarousel = () => {
                 slidesPerView={5}
                 spaceBetween={30}
                 freeMode={true}
-                centeredSlides={true}
-
-                // pagination={{
-                //     clickable: true,
-                // }}
+                // centeredSlides={true}
+                Navigation={true}
                 autoplay={{
                     delay: 1800,
                     disableOnInteraction: false,
                 }}
-                modules={[Autoplay, FreeMode]}
+                modules={[Autoplay, FreeMode, Navigation]}
                 className="mySwiper"
             >
                 <SwiperSlide><img src={adidas} alt="" /></SwiperSlide>
