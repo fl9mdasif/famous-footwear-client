@@ -12,7 +12,7 @@ module.exports = {
       'white': '#ffffff',
       'head': '#3ab7bf',
       'green': '#339966',
-      'red': '#cc0000',
+      'black': '#111111',
       'gold': '#ffd700'
     },
     extend: {},

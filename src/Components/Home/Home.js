@@ -1,11 +1,9 @@
 import React from 'react';
-// import { useRef } from 'react';
+import Hero from '../Hero.js/Hero';
 import AllShoes from '../Products/AllShoes';
 import BrandsCarousel from './BrandsCarousel';
 import ContactUs from './ContactUs';
-import Hero from './Hero';
 import Offers from './Offers';
-import ProductGallery from './ProductGallery';
 import ServiceCard from './ServiceCard';
 import Testimonial from './Testimonial';
 // import { Parallax, ParallaxLayer } from '@react-spring/parallax'

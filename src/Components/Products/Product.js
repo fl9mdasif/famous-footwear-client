@@ -16,7 +16,7 @@ const Product = ({ product }) => {
             <div class="items-center ">
                 <div class="px-2">
                     <h2 class=" text-start font-semibold mt-3 text-2xl">{name}</h2>
-                    <div class="rating rating-sm mt-">
+                    <div class="rating rating-sm mt- ">
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-gold" />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-gold" checked />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-gold" />
