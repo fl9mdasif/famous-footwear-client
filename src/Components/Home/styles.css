@@ -29,3 +29,43 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+/* hero section starts  */
+/* small device  600px below */
+@media only screen and (max-width: 600px) {
+    .relative {
+        position: relative;
+    }
+
+    .absolute {
+        position: absolute;
+        top: 65px;
+        right: 22px;
+
+    }
+
+    .heroHead {
+        font-size: 16px;
+        font-weight: 800;
+        text-align: end;
+        padding-bottom: 10px
+    }
+
+    .heroBtn {}
+}
+
+/* large device  600px and up) */
+@media only screen and (min-width: 600px) {
+    .relative {
+        position: relative;
+    }
+
+    .absolute {
+        position: absolute;
+        top: 200px;
+        right: 50px;
+    }
+}
+
+/* hero section end  */

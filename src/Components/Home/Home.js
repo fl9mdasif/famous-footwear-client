@@ -1,6 +1,7 @@
 import React from 'react';
 // import { useRef } from 'react';
 import AllShoes from '../Products/AllShoes';
+import BrandsCarousel from './BrandsCarousel';
 import ContactUs from './ContactUs';
 import Hero from './Hero';
 import Offers from './Offers';
@@ -20,7 +21,8 @@ const Home = () => {
             <Hero />
             <ServiceCard />
             <Offers />
-            <ProductGallery />
+            <BrandsCarousel />
+            {/* <ProductGallery /> */}
             <AllShoes />
             <Testimonial />
             <ContactUs />
