@@ -9,13 +9,13 @@ const Product = ({ product }) => {
     console.log(product);
     const { _id, name, imgUrl, price, brand, } = product;
     return (
-        <div class="drop-shadow-xl px-4 card w-80 bg-base-100 shadow-xl">
-            <figure class="px-0 pt-10">
-                <img src={imgUrl} alt="Shoes" class="productImg rounded-xl" />
+        <div class="drop-shadow-xl rounded-none px-4 card w-72 mb-4 bg-base-100 ">
+            <figure class="px-0 pt-4">
+                <img src={imgUrl} alt="Shoes" class="productImg rounded" />
             </figure>
             <div class="items-center ">
                 <div class="px-2">
-                    <h2 class=" text-start font-semibold mt-3 text-2xl">{name}</h2>
+                    <h2 class=" text-start font-semibold text-xl">{name}</h2>
                     <div class="rating rating-sm mt- ">
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-gold" />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-gold" checked />
@@ -27,7 +27,8 @@ const Product = ({ product }) => {
 
                     <div className="flex items-center justify-between  mt-1 mb-4">
                         <p className="text-xl font-semibold text-base pb-2">
-                            <span className="text-2xl text-base ">$</span>{price}
+                            <span style={{ color: '#4c4c4cc7' }} className="text-lg pr-3  line-through">${price}</span>
+                            <span className="text-2xl text-base ">${price}</span>
                         </p>
                         <button onClick={() => navigateProductDetails(_id)} class=" btn-sm font-semibold bg-base btn-primary rounded-md ">Buy Now</button>
                     </div>

@@ -12,7 +12,7 @@ import hero3 from '../../assest/HeroImg/03hero.png';
 
 const Hero = () => {
     return (
-        <>
+        <div className="">
             <Swiper
                 spaceBetween={0}
                 centeredSlides={true}
@@ -79,7 +79,7 @@ const Hero = () => {
 
             </Swiper >
 
-        </>
+        </div>
 
     );
 };

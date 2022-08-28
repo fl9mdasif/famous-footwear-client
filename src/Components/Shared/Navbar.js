@@ -28,108 +28,107 @@ const Navbar = () => {
         </>
 
     return (
-        <div>
-            <div className="navbar bg-green text-text ">
+        <div className="navbar top-0 text-black ">
 
-                <div className="navbar-start">
-                    <div className="dropdown bg-red-100">
-                        <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label >
-                        <ul tabIndex="0" className="menu bg-red-300 menu-compact dropdown-content mt-3 p-2 shadow bg-base text-head rounded-box w-52" >
-                            {menuItems}
+            <div className="navbar-start">
+                {/* mobile dropdown  */}
 
-                        </ul >
-                    </div >
-                    {/* mobile dropdown   */}
-                    <a href="/" className=" -16 bg- pl-3 font-bold text-head normal-case text-xl" >
-                        <img style={{
-                            height: '40px',
-                            width: '100%',
-                            marginLeft: '10px',
-                        }}
-                            alt='' src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
-                    </a >
-                </div >
-                <div className="navbar-center hidden lg:flex " >
-                    <ul className="menu  text-white menu-horizontal" >
+                <div className="dropdown bg-red-100">
+                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label >
+                    <ul tabIndex="0" style={{ backgroundColor: '#e9e9e9f7' }}
+                        className="menu bg-red-300 menu-compact dropdown-content mt-3 p-2 shadow text- rounded-box w-52" >
                         {menuItems}
+
                     </ul >
                 </div >
-                <div className="navbar-end pr-4">
+                {/* mobile dropdown btn   */}
+                <a href="/" className="  pl-3 font-bold text-black normal-case text-xl" >
+                    <img style={{
+                        height: '40px',
+                        width: '100%',
+                        marginLeft: '10px',
+                    }}
+                        alt='' src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
+                </a >
+            </div >
+            <div className="navbar-center hidden lg:flex " >
+                <ul className="menu  text-black menu-horizontal" >
+                    {menuItems}
+                </ul >
+            </div >
+            <div className="navbar-end  pr-4">
 
-                    {/* DropDown user photo and login dropdown end   */}
-                    <div class="dropdown dropdown-end">
-                        <label tabindex="0" class=" m-1">
-                            {
-                                user ?
-                                    <button>
-                                        <div class="avatar online">
-                                            <div class=" rounded-full hover13 column">
-                                                <figure>
-                                                    <img className=' userImg' style={{
-                                                        height: '42px',
-                                                        width: '42px',
-                                                        borderRadius: '50%',
-                                                        marginLeft: '10px',
-                                                        padding: '2px',
-                                                        border: '2px solid #c5c5c5 '
+                {/* DropDown user photo and login dropdown end   */}
+                <div class="dropdown  dropdown-end">
+                    <label tabindex="0" class=" m-1">
+                        {
+                            user ?
 
-                                                    }}
-                                                        referrerpolicy="no-referrer"
-                                                        src={photoUrl ? photoUrl : dummyUserPhoto} alt="*" />
-                                                </figure>
-                                            </div>
-                                        </div>
-                                    </button>
-                                    :
-                                    <button>
-                                        <div className="avatar offline">
-                                            <div className=' rounded-full'>
-                                                <img className='userImg' style={{
-                                                    height: '42px',
-                                                    width: '42px',
-                                                    borderRadius: '50%',
-                                                    marginLeft: '10px'
-                                                }} src={dummyUserPhoto} alt="" />
-                                            </div>
-                                        </div>
-                                    </button>
-                            }
-                        </label>
+                                <div class="avatar online">
+                                    <div class=" rounded-full hover13 column">
+                                        <figure>
+                                            <img className=' userImg' style={{
+                                                height: '42px',
+                                                width: '42px',
+                                                borderRadius: '50%',
+                                                marginLeft: '10px',
+                                                padding: '2px',
+                                                border: '2px solid #c5c5c5 '
 
-                        {/* dropdown list   */}
-                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                            }}
+                                                referrerpolicy="no-referrer"
+                                                src={photoUrl ? photoUrl : dummyUserPhoto} alt="*" />
+                                        </figure>
+                                    </div>
+                                </div>
+                                :
+                                <div className="avatar offline">
+                                    <div className=' rounded-full'>
+                                        <img className='userImg' style={{
+                                            height: '42px',
+                                            width: '42px',
+                                            borderRadius: '50%',
+                                            marginLeft: '10px'
+                                        }} src={dummyUserPhoto} alt="" />
+                                    </div>
+                                </div>
+                        }
+                    </label>
 
-                            {user && <li li > <Link to='/myitems' >My Items</Link></li>}
-                            {
-                                user ?
-                                    <li>
-                                        <button>
-                                            <span onClick={handleSignOut} className="flex items-center text-text ">
-                                                Sign Out
-                                                <span> <img style={{
-                                                    height: '42px',
-                                                    width: '42px',
-                                                    borderRadius: '50%',
-                                                    marginLeft: '10px'
-                                                }}
-                                                    referrerpolicy="no-referrer"
-                                                    src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>
-                                            </span>
-                                        </button>
-                                    </li>
-                                    :
-                                    <li><Link to='/login' >Login</Link></li>
-                            }
+                    {/* dropdown list   */}
+                    <ul style={{ backgroundColor: '#e9e9e9f7' }} tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 
-                        </ul>
-                    </div >
+                        {user && <li > <Link to='/myitems' >My Items</Link></li>}
+                        {
+                            user ?
+                                <li>
 
+                                    <span onClick={handleSignOut} className="flex items-center text-text ">
+                                        Sign Out
+                                        <span> <img style={{
+                                            height: '42px',
+                                            width: '42px',
+                                            borderRadius: '50%',
+                                            marginLeft: '10px'
+                                        }}
+                                            referrerpolicy="no-referrer"
+                                            src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>
+                                    </span>
+
+                                </li>
+                                :
+                                <li><Link to='/login' >Login</Link></li>
+                        }
+
+                    </ul>
                 </div >
 
             </div >
+
         </div >
+
     );
 };
 

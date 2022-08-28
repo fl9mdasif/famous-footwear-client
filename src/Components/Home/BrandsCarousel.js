@@ -31,15 +31,15 @@ const BrandsCarousel = () => {
                 modules={[Autoplay, FreeMode, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide><img src={adidas} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={birkenstock} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={converse} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={nike} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={heydude} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={newbalance} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={puma} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={vans} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={drmartens} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={adidas} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={birkenstock} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={converse} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={nike} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={heydude} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={newbalance} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={puma} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={vans} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="" src={drmartens} alt="" /></SwiperSlide>
             </Swiper>
         </>
     );
