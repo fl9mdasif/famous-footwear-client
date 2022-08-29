@@ -3,8 +3,8 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../Firebase.init';
-
-import '../../App.css'
+import '../../App.css';
+import Navlogo from '../../assest/Navlogo.png'
 
 const Navbar = () => {
 
@@ -49,8 +49,9 @@ const Navbar = () => {
                         height: '40px',
                         width: '100%',
                         marginLeft: '10px',
+                        objectFit: 'cover'
                     }}
-                        alt='' src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
+                        alt='' src={Navlogo} />
                 </a >
             </div >
             <div className="navbar-center hidden lg:flex " >

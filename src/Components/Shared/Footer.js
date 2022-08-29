@@ -1,4 +1,5 @@
 import React from 'react';
+import Navlogo from '../../assest/Navlogo.png'
 
 const Footer = () => {
     return (
@@ -16,7 +17,7 @@ const Footer = () => {
                                     marginLeft: '10px',
                                 }}
                                     alt=''
-                                    src="https://www.elite.net.bd/wp-content/uploads/2020/03/logo-web-elite.png" />
+                                    src={Navlogo} />
                             </a >
                             <span class="ml-3 text-xl">
 
