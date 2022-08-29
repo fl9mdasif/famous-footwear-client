@@ -2,84 +2,52 @@
     {
         "name": "Tommy Hilfiger Racklin",
         "imgUrl": "https://i.ibb.co/pZzxf12/01.jpg",
+        "d-price": "55",
         "price": "38",
         "stocks": "28",
-        "size": [
-            7,
-            8,
-            9,
-            10,
-            11
-        ],
         "brand": "Lotto",
         "color": "#383d50"
     },
     {
         "name": "Beverly Hills Polo Club",
         "imgUrl": "https://i.ibb.co/ykpW4ZW/Beverly-Hills-Polo-Club-Emilio.jpg",
+        "d-price": "55",
         "price": "32",
         "stocks": "18",
-        "size": [
-            7,
-            8,
-            9,
-            10,
-            11
-        ],
         "color": "#111111",
         "brand": "Bata"
     },
     {
         "name": "J75 by JUMP Blake Lo",
         "imgUrl": "https://i.ibb.co/q7j4KTB/J75-by-JUMP-Blake-Lo.jpg",
+        "d-price": "55",
         "price": "29",
         "stocks": "20",
-        "size": [
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-        ],
         "color": "#111111",
         "brand": "Apex"
     },
     {
         "name": "Oliver Mason Randy",
         "imgUrl": "https://i.ibb.co/F0sjBqz/Lamo-Slip-On.jpg",
+        "d-price": "55",
         "price": "42",
         "stocks": "21",
-        "size": [
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-        ],
         "color": "#8a4b1c",
         "brand": "Oliver"
     },
     {
         "name": "Savannah Harbor Travis",
         "imgUrl": "https://i.ibb.co/f1km12V/Savannah-Harbor-Travis.jpg",
+        "d-price": "55",
         "price": "55",
         "stocks": "12",
-        "size": [
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-        ],
         "color": "#111111",
         "brand": "Fortune"
     },
     {
         "name": "Oliver Mason Ralph",
         "imgUrl": "https://i.ibb.co/D9LLPML/Oliver-Mason-Ralph.jpg",
+        "d-price": "55",
         "price": "21",
         "stocks": "24",
         "size": [
