@@ -8,11 +8,17 @@ const AddShoe = () => {
     const imageStorageKey = '2c213338298945009a5f44b7b85d3b4f';
 
     //Form Control & Submit
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const onSubmit = formInfo => {
-        const { name, description, quantity, price, review } = formInfo;
 
+        const { name, description, quantity, originalPrice, gender, discountPrice, brand } = formInfo;
+
+        const discount = ((originalPrice - discountPrice) / originalPrice) * 100;
+        const discountRoundPrice = JSON.stringify(Math.round(discount))
+        // console.log('discount: ', discount);
+
+        //imageBB api
         const image = formInfo.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -28,11 +34,15 @@ const AddShoe = () => {
                     const image = result.data.display_url;
                     const product = {
                         name: name,
-                        imgUrl: image,
                         description: description,
-                        price: price,
-                        review: review,
-                        available: quantity
+                        brand: brand,
+                        gender: gender,
+                        originalPrice: originalPrice,
+                        discountPrice: discountPrice,
+                        available: quantity,
+                        imgUrl: image,
+                        discountRoundPrice: discountRoundPrice,
+                        // review: review,
                     }
                     console.log('product', product);
 
@@ -48,7 +58,7 @@ const AddShoe = () => {
                             console.log(data)
                             if (data) {
 
-                                toast(`Product Added to Database and product page`)
+                                toast.success(`Product Added to Database and product page`)
                             }
                             else {
                                 toast.error(`Already have and with same Name!`)
@@ -59,6 +69,7 @@ const AddShoe = () => {
             });
 
 
+        reset();
 
 
 
@@ -71,14 +82,13 @@ const AddShoe = () => {
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
+
+
                             {/* Input Product Name */}
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Product Name</span>
-                                </label>
                                 <input
                                     type="text"
-                                    placeholder="Product Name"
+                                    placeholder=" Enter Product Name"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("name", {
                                         required: {
@@ -94,12 +104,10 @@ const AddShoe = () => {
 
                             {/* Input Product Description */}
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Product Description</span>
-                                </label>
+
                                 <input
                                     type="text"
-                                    placeholder="Product Description"
+                                    placeholder=" Enter Product Description"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("description", {
                                         required: {
@@ -118,16 +126,67 @@ const AddShoe = () => {
                                 </label>
                             </div>
 
-                            {/* Input Product Price */}
+                            {/* Input product brand name */}
                             <div className="form-control w-full max-w-xs">
+
+                                <input
+                                    type="text"
+                                    placeholder=" Enter Product Brand Name"
+                                    className="input input-bordered w-full max-w-xs"
+                                    {...register("brand", {
+                                        required: {
+                                            value: true,
+                                            message: 'Product Brand is Required'
+                                        },
+                                        pattern: {
+                                            value: true,
+                                            message: 'Provide Product Brand Name'
+                                        }
+                                    })}
+                                />
                                 <label className="label">
-                                    <span className="label-text">Product Price</span>
+                                    {errors.brand?.type === 'required' && <span className="label-text-alt text-red-500">{errors.brand.message}</span>}
+                                    {errors.brand?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.brand.message}</span>}
                                 </label>
+                            </div>
+
+
+                            {/* Input Gender's */}
+                            <div className="form-control w-full max-w-xs">
+
+                                <select
+                                    placeholder=" Enter Product Description"
+                                    className="input input-bordered w-full max-w-xs"
+                                    {...register("gender", {
+                                        required: {
+                                            value: true,
+                                            message: 'Product Description is Required'
+                                        },
+                                        pattern: {
+                                            value: true,
+                                            message: 'Provide Product Description'
+                                        }
+                                    })}>
+                                    <option default value="">Product Gender</option>
+                                    <option value="Man Shoe">Man shoes</option>
+                                    <option value="Women Shoe">Womencshoes</option>
+
+
+
+                                </select>
+                                <label className="label">
+                                    {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
+                                    {errors.description?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
+                                </label>
+                            </div>
+
+                            {/* Input product originalPrice  */}
+                            <div className="form-control w-full max-w-xs">
                                 <input
                                     type="number"
-                                    placeholder="Product Price"
+                                    placeholder=" Enter originalPrice Price"
                                     className="input input-bordered w-full max-w-xs"
-                                    {...register("price", {
+                                    {...register("originalPrice", {
                                         required: {
                                             value: true,
                                             message: 'Product Price is Required'
@@ -138,14 +197,30 @@ const AddShoe = () => {
                                     {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
                                 </label>
                             </div>
-                            {/* Input review range */}
+
+                            {/* Input discountPrice Price */}
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Review</span>
-                                </label>
                                 <input
                                     type="number"
-                                    placeholder="Review"
+                                    placeholder=" Enter discountPrice Price"
+                                    className="input input-bordered w-full max-w-xs"
+                                    {...register("discountPrice", {
+                                        required: {
+                                            value: true,
+                                            message: 'Product Price is Required'
+                                        }
+                                    })}
+                                />
+                                <label className="label">
+                                    {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
+                                </label>
+                            </div>
+
+                            {/* Input review range */}
+                            {/* <div className="form-control w-full max-w-xs">
+                                <input
+                                    type="number"
+                                    placeholder=" Enter Review"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("review", {
                                         required: {
@@ -157,16 +232,13 @@ const AddShoe = () => {
                                 <label className="label">
                                     {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors.review.message}</span>}
                                 </label>
-                            </div>
+                            </div> */}
 
                             {/* Input Available Product Quantity*/}
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Available Product Quantity</span>
-                                </label>
                                 <input
                                     type="number"
-                                    placeholder="Available Product Quantity"
+                                    placeholder=" Enter Available Product Quantity"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("quantity", {
                                         required: {
@@ -179,13 +251,12 @@ const AddShoe = () => {
                                     {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>}
                                 </label>
                             </div>
+
                             {/* img uplaod */}
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Photo</span>
-                                </label>
                                 <input
                                     type="file"
+                                    placeholder=" Enter Available Product Quantity"
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("image", {
                                         required: {
@@ -200,7 +271,7 @@ const AddShoe = () => {
                             </div>
 
                             {/* Sbmit Button */}
-                            <input className='btn w-full max-w-xs text-white' type="submit" value="Submit Order" />
+                            <input className='btn bg-base w-full max-w-xs text-white' type="submit" value="Upload Shoe" />
                         </form>
                     </div>
                 </div>
