@@ -1,14 +1,15 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 
 
 const ShoeDetails = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const navigate = useNavigate()
     const { productID } = useParams();
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
         fetch(`http://localhost:5000/allshoes/${productID}`).then(res =>
@@ -19,9 +20,6 @@ const ShoeDetails = () => {
     // console.log(products)
     const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
     // console.log(product);
-
-
-
 
     // restockQuantity
     const onSubmit = formInfo => {
@@ -98,6 +96,13 @@ const ShoeDetails = () => {
                 refetch()
             });
         reset()
+    }
+
+    function manageInventory() {
+        navigate('/manageshoes')
+    }
+    function addItemPage() {
+        navigate('/addShoe')
     }
     return (
         <>
@@ -195,7 +200,9 @@ const ShoeDetails = () => {
                                     <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
                                 </form>
 
-                                <button onClick={deliveryProduct} className="btn ">Delivered</button>
+                                <button onClick={deliveryProduct} className="btn my-3 bg-green ">Delivered</button>
+                                <button onClick={addItemPage} className="btn my-3 bg-head ">Add new Item</button>
+                                <button onClick={manageInventory} className="btn bg-base"> Manage Inventory</button>
                             </div>
 
                         </div>

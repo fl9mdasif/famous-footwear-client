@@ -1,14 +1,18 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 // import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import auth from '../../Firebase.init';
 
 const AddShoe = () => {
     const imageStorageKey = '2c213338298945009a5f44b7b85d3b4f';
 
     //Form Control & Submit
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [user] = useAuthState(auth)
+    console.log(user.email);
 
     const onSubmit = formInfo => {
 
@@ -33,6 +37,7 @@ const AddShoe = () => {
                 if (result.success) {
                     const image = result.data.display_url;
                     const product = {
+                        email: user.email,
                         name: name,
                         description: description,
                         brand: brand,
@@ -58,7 +63,7 @@ const AddShoe = () => {
                             console.log(data)
                             if (data) {
 
-                                toast.success(`Product Added to Database and product page`)
+                                toast.success(`Product Added to Database and My item page`)
                             }
                             else {
                                 toast.error(`Already have and with same Name!`)
@@ -169,7 +174,7 @@ const AddShoe = () => {
                                     })}>
                                     <option default value="">Product Gender</option>
                                     <option value="Man Shoe">Man shoes</option>
-                                    <option value="Women Shoe">Womencshoes</option>
+                                    <option value="Women Shoe">Women shoes</option>
 
 
 

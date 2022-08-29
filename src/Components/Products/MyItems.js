@@ -1,15 +1,102 @@
-import React from 'react';
+import { toast } from 'react-toastify';
+import { useQuery } from '@tanstack/react-query'
+import './ShoeDetails.styles.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase.init';
 
 const MyItems = () => {
+
+    const [user] = useAuthState(auth)
+    const userEmail = user.reloadUserInfo.email;
+
+
+
+    const { isLoading, error, data: products, refetch } = useQuery(['shoeData'], () =>
+        fetch(`http://localhost:5000/userAddedItems`).then(res =>
+            res.json())
+    )
+    if (isLoading) return 'Loading...'
+    if (error) return 'An error has occurred: ' + error.message
+    // console.log(products)
+    // const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
+
+
+    // Delete Single Shoe
+    const manageProductToDelete = (id) => {
+        const proceed = window.confirm('Are you sure to delete product');
+        if (proceed) {
+            const url = `http://localhost:5000/userAddedItems/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast.error('product deleted from All shoes')
+                    refetch()
+
+                })
+        }
+    };
+
+    // User uploaded information 
+    const userOrders = [];
+    // console.log(userOrders);
+    products.map(product => {
+        console.log('productmail:', product.email, 'user:', userEmail)
+        if (product.email === userEmail) {
+            userOrders.push(product)
+        }
+        else {
+            // eslint-disable-next-line array-callback-return
+            return;
+        }
+    });
+
     return (
-        <div className='h-screen'>
-            <div class="flex bg-base w-auto  relative ">
-                <img alt="" className="object-cover" src="https://media.rackroomshoes.com/img/events/2022/summer/homepage/20220706-hero.jpg" />
-                <div class="absolute bottom-28 right-10 ...">
-                    <h1> </h1>
-                </div>
-            </div>
-        </div>
+        <div className="overflow-x-auto">
+            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
+
+            <table className="table table-compact w-full mx-auto text-center">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Quantity</th>
+                        <th>Gender</th>
+                        <th>Price</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        userOrders.map((product, index) =>
+                            <tr>
+                                <td>{index + 1}</td>
+                                <td>{product.name}</td>
+                                <td>{product.brand}</td>
+                                <td>{product.available}</td>
+                                <td>{product.gender}</td>
+                                <td>{product.discountPrice}</td>
+                                <td>
+
+                                    <button
+                                        onClick={() => manageProductToDelete(product._id)}
+                                        className=' btn disabledDltBtn border-none text-white btn-xs bg-white'
+                                    >
+                                        <box-icon color='red' type='solid' name='trash'></box-icon>
+                                    </button>
+
+
+
+                                </td>
+                            </tr>
+                        )
+                    }
+                </tbody >
+            </table >
+        </div >
     );
 };
 

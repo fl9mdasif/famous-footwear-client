@@ -15,6 +15,7 @@ import MyItems from './Components/Products/MyItems';
 import NotFound from './Components/Shared/NotFound';
 import Practice from './Components/Practice';
 import ManageProduct from './Components/Products/ManageProduct';
+import PrivateAuth from './Components/Shared/Login/PrivateAuth';
 
 function App() {
 
@@ -29,11 +30,27 @@ function App() {
 
         {/* shoe store && user facilities   */}
         <Route path='/allshoes' element={<AllShoes />} />
-        <Route path='/productDetails/:productID' element={<ShoeDetails />} />
+        <Route path='/productDetails/:productID' element={
+          <PrivateAuth>
+            <ShoeDetails />
+          </PrivateAuth>
+        } />
 
-        <Route path='/addshoe' element={<AddShoe />} />
-        <Route path='/manageshoes' element={<ManageProduct />} />
-        <Route path='/myitems' element={<MyItems />} />
+        <Route path='/addshoe' element={
+          <PrivateAuth>
+            <AddShoe />
+          </PrivateAuth>
+        } />
+        <Route path='/manageshoes' element={
+          <PrivateAuth>
+            <ManageProduct />
+          </PrivateAuth>
+        } />
+        <Route path='/myitems' element={
+          <PrivateAuth>
+            <MyItems />
+          </PrivateAuth>
+        } />
         <Route path='*' element={<NotFound />} />
 
       </Routes>

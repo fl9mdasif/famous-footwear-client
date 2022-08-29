@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../App.css'
 const Product = ({ product }) => {
 
@@ -11,7 +11,7 @@ const Product = ({ product }) => {
     console.log(product);
 
     // const { _id, name, imgUrl, price, brand, } = product;
-    const { _id, name, originalPrice, discountPrice, imgUrl, available, discountRoundPrice } = product
+    const { _id, name, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
 
     console.log(_id);
     return (

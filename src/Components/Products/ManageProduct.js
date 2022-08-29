@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-// import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query'
+import './ShoeDetails.styles.css'
 
 const ManageProduct = () => {
     // const navigate = useNavigate()
-    const [products, setProducts] = useState([]);
-
-
+    // const [products, setProducts] = useState([]);
 
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
         fetch(`http://localhost:5000/allshoes`).then(res =>
@@ -16,7 +13,7 @@ const ManageProduct = () => {
     if (isLoading) return 'Loading...'
     if (error) return 'An error has occurred: ' + error.message
     // console.log(products)
-    const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
+    // const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
 
 
     // Delete Single Shoe
@@ -62,12 +59,25 @@ const ManageProduct = () => {
                                 <td>{product.available}</td>
                                 <td>{product.gender}</td>
                                 <td>{product.discountPrice}</td>
-                                <td><button onClick={() => manageProductToDelete(product._id)} className='btn border-none text-white btn-xs bg-white'><box-icon color='red' type='solid' name='trash'></box-icon></button></td>
-                            </tr>)
+                                <td>
+
+                                    <button
+                                        disabled
+                                        onClick={() => manageProductToDelete(product._id)}
+                                        className=' btn disabledDltBtn border-none text-white btn-xs bg-white'
+                                    >
+                                        <box-icon color='red' type='solid' name='trash'></box-icon>
+                                    </button>
+
+
+
+                                </td>
+                            </tr>
+                        )
                     }
-                </tbody>
-            </table>
-        </div>
+                </tbody >
+            </table >
+        </div >
     );
 };
 
