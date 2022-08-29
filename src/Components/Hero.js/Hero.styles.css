@@ -5,7 +5,7 @@
         position: relative;
     }
 
-    .absolute {
+    .absolute1 {
         position: absolute;
         top: 35px;
         left: 42px;
@@ -57,7 +57,7 @@
         position: relative;
     }
 
-    .absolute {
+    .absolute1 {
         position: absolute;
         top: 180px;
         left: 100px;

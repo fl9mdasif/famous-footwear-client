@@ -15,10 +15,17 @@ const Product = ({ product }) => {
 
     console.log(_id);
     return (
-        <div class="drop-shadow-xl rounded-none px-4 card w-72 mb-4 bg-base-100 ">
+        <div class="drop-shadow-xl relative rounded-none px-4 card w-72 mb-4 bg-base-100 ">
             <figure class="px-0 pt-4">
                 <img src={imgUrl} alt="Shoes" class="productImg rounded" />
             </figure>
+
+            {/* card discount top */}
+            <div className='absolute rounded-full top-0 p-2 right-0  bg-green'>
+                <p className='text-white semibold text-xs'>{discountRoundPrice}%</p>
+            </div>
+
+
             <div class="items-center ">
                 <div class="px-2">
                     <h2 class=" text-start font-semibold text-xl">{name}</h2>
@@ -41,7 +48,6 @@ const Product = ({ product }) => {
                         <button onClick={() => navigateProductDetails(_id)} class=" btn-sm font-semibold bg-base btn-primary rounded-md ">Buy Now</button>
                     </div>
                 </div>
-
             </div>
         </div>
     );

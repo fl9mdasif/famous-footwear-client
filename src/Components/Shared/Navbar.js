@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
             <li><Link to='/' href="#2">Home</Link></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
-            <li><Link to='/prac' >Practice</Link></li>
+            {/* <li><Link to='/prac' >Practice</Link></li> */}
             {user && <li><Link to='/addshoe' >AddShoe</Link></li>}
             {user && <li><Link to='/manageshoes' >ManageShoes</Link></li>}
         </>

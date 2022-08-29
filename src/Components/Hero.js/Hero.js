@@ -30,7 +30,7 @@ const Hero = () => {
                 <SwiperSlide>
                     < div div className="relative h-scren w-screen " >
                         <img className="object-fill sliderImg " src={hero1} alt="" />
-                        <div className="absolute flex flex-col  justify-start">
+                        <div className="absolute1 flex flex-col  justify-start">
                             <div><p className="heroP"> Man's original</p></div>
                             <div><h1 className="heroHead text-start" >Falcon Shoes</h1></div>
                             <div><p className="heroP pb-4 "> Lorem ipsum dolor amet consectetur <br />adipisicing Nobis, excepturi. </p></div>
@@ -45,7 +45,7 @@ const Hero = () => {
                 <SwiperSlide>
                     < div div className="relative h-scren w-screen " >
                         <img className="object-fill sliderImg " src={hero2} alt="" />
-                        <div className="absolute flex flex-col  justify-start">
+                        <div className="absolute1 flex flex-col  justify-start">
                             <div><p className="heroP text-white "> Running Sneakers </p></div>
                             <div><h1 className="heroHead text-start " >Men's like flex</h1></div>
                             <div><p className="heroP text-white pb-4 "> Lorem ipsum dolor amet consectetur <br />adipisicing Nobis, excepturi. </p></div>
