@@ -62,7 +62,6 @@ const AddShoe = () => {
                         .then(data => {
                             console.log(data)
                             if (data) {
-
                                 toast.success(`Product Added to Database and My item page`)
                             }
                             else {

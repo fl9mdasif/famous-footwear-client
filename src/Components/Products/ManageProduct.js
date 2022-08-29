@@ -41,6 +41,7 @@ const ManageProduct = () => {
                 <thead>
                     <tr>
                         <th>No.</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Brand</th>
                         <th>Quantity</th>
@@ -54,6 +55,18 @@ const ManageProduct = () => {
                         product.map((product, index) =>
                             <tr>
                                 <td>{index + 1}</td>
+                                <td>
+                                    <img
+                                        style={{
+                                            height: '42px',
+                                            width: '42px',
+                                            borderRadius: '5',
+                                            marginLeft: '10px'
+                                        }}
+                                        referrerpolicy="no-referrer"
+                                        src={product.imgUrl} alt=""
+                                    />
+                                </td>
                                 <td>{product.name}</td>
                                 <td>{product.brand}</td>
                                 <td>{product.available}</td>
