@@ -16,13 +16,14 @@ const Navbar = () => {
     const dummyUserPhoto = 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
     const photoUrl = user?.reloadUserInfo.photoUrl;
     // const userName = user?.displayName
-    console.log(user);
+    // console.log(user);
     // console.log(photoUrl)
 
     const menuItems =
         <>
             <li><Link to='' href="#2">Home</Link></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
+            <li><Link to='/blogs' >Blog</Link></li>
             {/* <li><Link to='/prac' >Practice</Link></li> */}
             {user && <li><Link to='/addshoe' >AddShoe</Link></li>}
             {user && <li><Link to='/manageshoes' >ManageShoes</Link></li>}
@@ -61,7 +62,7 @@ const Navbar = () => {
                 </ul >
             </div >
             <div className="navbar-end  pr-4">
-                {/* <p className="">{userName}</p> */}
+                {/* <p className="">USER</p> */}
 
                 {/* DropDown user photo and login dropdown end   */}
                 <div class="dropdown  dropdown-end">

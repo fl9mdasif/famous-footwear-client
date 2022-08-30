@@ -8,12 +8,12 @@ const Product = ({ product }) => {
     const navigateProductDetails = (id) => {
         navigate(`/productDetails/${id}`)
     }
-    console.log(product);
+    // console.log(product);
 
     // const { _id, name, imgUrl, price, brand, } = product;
     const { _id, name, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
+    // console.log(_id);
 
-    console.log(_id);
     return (
         <div class="product-container drop-shadow-xl relative rounded-none px-4 card w-72 mb-4 bg-base-100 ">
             <figure class="px-0 pt-4">

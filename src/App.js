@@ -15,6 +15,7 @@ import NotFound from './Components/Shared/NotFound';
 import ManageProduct from './Components/Products/ManageProduct';
 import PrivateAuth from './Components/Shared/Login/PrivateAuth';
 import Blog from './Components/Blog/Blog';
+import BlogDetails from './Components/Blog/BlogDetails';
 
 function App() {
 
@@ -25,10 +26,17 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/blog' element={<Blog />} />
+        <Route path='/blogs' element={<Blog />} />
+
+        <Route path='/blogDetails/:blogID' element={
+          <BlogDetails />
+        } />
+
 
         {/* shoe store && user facilities   */}
         <Route path='/allshoes' element={<AllShoes />} />
+
+        {/* product details   */}
         <Route path='/productDetails/:productID' element={
           <PrivateAuth>
             <ShoeDetails />

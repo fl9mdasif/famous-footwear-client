@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from '../Hero.js/Hero';
-import AllShoes from '../Products/AllShoes';
 import NewProducts from '../Products/NewProducts';
 import BrandsCarousel from './BrandsCarousel';
 import ContactUs from './ContactUs';
@@ -20,11 +19,8 @@ const Home = () => {
             <Offers />
             <BrandsCarousel />
             <NewProducts />
-            {/* <ProductGallery /> */}
-            {/* <AllShoes /> */}
             <Testimonial />
             <ContactUs />
-
         </div>
     )
 };

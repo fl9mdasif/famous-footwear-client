@@ -4,8 +4,7 @@ import './ProductStyle.css'
 import { Link } from 'react-router-dom';
 
 const ManageProduct = () => {
-    // const navigate = useNavigate()
-    // const [products, setProducts] = useState([]);
+
 
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
         fetch(`http://localhost:5000/allshoes`).then(res =>
@@ -13,9 +12,6 @@ const ManageProduct = () => {
     )
     if (isLoading) return 'Loading...'
     if (error) return 'An error has occurred: ' + error.message
-    // console.log(products)
-    // const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
-
 
     // Delete Single Shoe
     const manageProductToDelete = (id) => {
