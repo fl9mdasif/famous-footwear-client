@@ -28,8 +28,14 @@ const BlogDetails = () => {
                 </div>
                 <p className="pt-8">{category}</p>
 
-                <div class="flex items-center justify-between flex-wrap ">
-                    <h1 class=" flex items-center font-bold text-base1 sm:text-2xl md:text-4xl lg:text-5xl text-start pb-12 rounded-md ">{blog_title}</h1>
+                <div class="flex items-center justify-between pb-8 flex-wrap ">
+                    <div class=" flex justify-center">
+                        <h1 class=" font-bold text-base1 
+                        sm:text-2xl 
+                        md:text-4xl 
+                        lg:-5xl rounded-md ">{blog_title}</h1>
+                    </div>
+
                     <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-base">
                         <svg class="w-4 h-4 mr-1 text-red" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -44,7 +50,7 @@ const BlogDetails = () => {
                 </div>
 
                 <div className=" pt-"><p >{blog_description}</p></div>
-            </div>
+            </div >
         </>
     );
 };
