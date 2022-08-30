@@ -9,13 +9,12 @@ import Login from './Components/Shared/Login/Login';
 import SignUp from './Components/Shared/Login/SignUp';
 import AddShoe from './Components/Products/AddShoe';
 import AllShoes from './Components/Products/AllShoes';
-// import ManageShoes from './Components/Products/ManageProduct';
 import ShoeDetails from './Components/Products/ShoeDetails';
 import MyItems from './Components/Products/MyItems';
 import NotFound from './Components/Shared/NotFound';
-import Practice from './Components/Practice';
 import ManageProduct from './Components/Products/ManageProduct';
 import PrivateAuth from './Components/Shared/Login/PrivateAuth';
+import Blog from './Components/Blog/Blog';
 
 function App() {
 
@@ -26,7 +25,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/prac' element={<Practice />} />
+        <Route path='/blog' element={<Blog />} />
 
         {/* shoe store && user facilities   */}
         <Route path='/allshoes' element={<AllShoes />} />

@@ -11,7 +11,7 @@ const AllShoes = () => {
 
     return (
         <div className=" container mx-auto w-100 ">
-            <h1 className="p-3 font-bold text-center text-primary sm:text-xl md:text-3xl lg:text-4xl">MAN'S SHOES</h1>
+            <h1 className="p-3 font-bold text-center text-base1 sm:text-xl md:text-3xl lg:text-4xl">MAN'S SHOES</h1>
 
             <div className="
                 m-3 justify-items-center grid 

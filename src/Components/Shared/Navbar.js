@@ -15,12 +15,13 @@ const Navbar = () => {
 
     const dummyUserPhoto = 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
     const photoUrl = user?.reloadUserInfo.photoUrl;
-    // console.log(user);
+    // const userName = user?.displayName
+    console.log(user);
     // console.log(photoUrl)
 
     const menuItems =
         <>
-            <li><Link to='/' href="#2">Home</Link></li>
+            <li><Link to='' href="#2">Home</Link></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
             {/* <li><Link to='/prac' >Practice</Link></li> */}
             {user && <li><Link to='/addshoe' >AddShoe</Link></li>}
@@ -33,9 +34,9 @@ const Navbar = () => {
             <div className="navbar-start">
                 {/* mobile dropdown  */}
 
-                <div className="dropdown bg-red-100">
-                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                <div className="dropdown bg-base">
+                    <label tabIndex="0" className="btn  btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label >
                     <ul tabIndex="0" style={{ backgroundColor: '#e9e9e9f7' }}
                         className="menu bg-red-300 menu-compact dropdown-content mt-3 p-2 shadow text- rounded-box w-52" >
@@ -60,6 +61,7 @@ const Navbar = () => {
                 </ul >
             </div >
             <div className="navbar-end  pr-4">
+                {/* <p className="">{userName}</p> */}
 
                 {/* DropDown user photo and login dropdown end   */}
                 <div class="dropdown  dropdown-end">
@@ -74,7 +76,6 @@ const Navbar = () => {
                                                 height: '42px',
                                                 width: '42px',
                                                 borderRadius: '50%',
-                                                marginLeft: '10px',
                                                 padding: '2px',
                                                 border: '2px solid #c5c5c5 '
 
@@ -91,7 +92,6 @@ const Navbar = () => {
                                             height: '42px',
                                             width: '42px',
                                             borderRadius: '50%',
-                                            marginLeft: '10px'
                                         }} src={dummyUserPhoto} alt="" />
                                     </div>
                                 </div>
@@ -100,8 +100,8 @@ const Navbar = () => {
 
                     {/* dropdown list   */}
                     <ul style={{ backgroundColor: '#e9e9e9f7' }} tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-
                         {user && <li > <Link to='/myitems' >My Items</Link></li>}
+
                         {
                             user ?
                                 <li>
@@ -111,8 +111,6 @@ const Navbar = () => {
                                         <span> <img style={{
                                             height: '42px',
                                             width: '42px',
-                                            borderRadius: '50%',
-                                            marginLeft: '10px'
                                         }}
                                             referrerpolicy="no-referrer"
                                             src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>

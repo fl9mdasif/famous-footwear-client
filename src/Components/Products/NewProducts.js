@@ -17,7 +17,7 @@ const NewProducts = () => {
     return (
 
         <>
-            <h1 className="p-3 font-bold text-center text-base 
+            <h1 className="p-3 font-bold text-center text-base1
             sm:text-xl 
             md:text-3xl 
             lg:text-4xl">NEW COLLECTION</h1>
@@ -35,7 +35,7 @@ const NewProducts = () => {
             </div>
 
             <div className='flex justify-center mb-8'>
-                <button className=" bg-base  btn"><Link to="allShoes" > View All Products</Link></button>
+                <button className=" bg-base1  btn"><Link to="allShoes" > View All Products</Link></button>
             </div>
         </>
     );

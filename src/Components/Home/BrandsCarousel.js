@@ -9,7 +9,7 @@ import puma from '../../../src/assest/BrandsLogo/puma.svg';
 import vans from '../../../src/assest/BrandsLogo/vans.svg';
 import nike from '../../../src/assest/BrandsLogo/nike.svg';
 
-import '../../../src/Components/Home/styles.css'
+import './styles.css'
 import "swiper/css";
 import "swiper/css/navigation";
 import { SwiperSlide, Swiper } from 'swiper/react';

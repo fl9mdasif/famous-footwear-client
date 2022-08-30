@@ -8,12 +8,14 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      'base': '#7863FF',
-      'white': '#ffffff',
-      'head': '#3ab7bf',
-      'green': '#339966',
+      'base': '#4cdab9',
+      'base1': '#155e4d',
+      'body': '#f5f5f5',
+      'white': '#fff',
+      'red': '#cc3535',
+      'blue': '#3535ca',
       'black': '#111111',
-      'gold': '#ffd700'
+      'gold': '#fdda1b'
     },
     extend: {},
   },

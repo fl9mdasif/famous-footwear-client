@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import { useQuery } from '@tanstack/react-query'
-import './ShoeDetails.styles.css'
+import './ProductStyle.css'
+import { Link } from 'react-router-dom';
 
 const ManageProduct = () => {
     // const navigate = useNavigate()
@@ -35,8 +36,19 @@ const ManageProduct = () => {
     };
     return (
         <div className="overflow-x-auto">
-            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
-
+            <div className="py-10 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
+            <div>
+                <p className='text-red '>Only Admin could manage these items. You could Add / Manage your own items on
+                    <span className=' px-2 text-blue underline'>
+                        <Link to='/addshoe'>Add Item </Link>
+                    </span>
+                    page and
+                    <span className=' px-2 text-blue underline'>
+                        <Link to='/myitems'>Manage Items</Link>
+                    </span>
+                    page
+                </p>
+            </div>
             <table className="table table-compact w-full mx-auto text-center">
                 <thead>
                     <tr>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -80,7 +81,7 @@ const AddShoe = () => {
     }
     return (
         <div>
-            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">ADD SHOE</div>
+            <div className="py-10 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">ADD SHOE</div>
 
             <div className='flex  justify-center items-center'>
                 <div className="card w-96 bg-base-100 shadow-xl">
@@ -277,10 +278,13 @@ const AddShoe = () => {
                             {/* Sbmit Button */}
                             <input className='btn bg-base w-full max-w-xs text-white' type="submit" value="Upload Shoe" />
                         </form>
+
                     </div>
+                    <Link className='py-3 bg-red flex justify-center px-2 text-white font-bold'
+                        to='/myitems'>Manage Items
+                    </Link>
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };

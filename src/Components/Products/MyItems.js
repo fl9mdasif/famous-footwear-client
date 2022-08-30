@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { useQuery } from '@tanstack/react-query'
-import './ShoeDetails.styles.css'
+import './ProductStyle.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 
@@ -55,7 +55,7 @@ const MyItems = () => {
 
     return (
         <div className="overflow-x-auto">
-            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
+            <div className="py-10 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">MY ITEMS</div>
 
             <table className="table table-compact w-full mx-auto text-center">
                 <thead>

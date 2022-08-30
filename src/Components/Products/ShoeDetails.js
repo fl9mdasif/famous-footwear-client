@@ -149,9 +149,9 @@ const ShoeDetails = () => {
                                 <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
 
                             </div>
-
+                            {/* Availability */}
                             <h1 className="pt-2 text-2xl inline-block mr-3">Availability: </h1>
-                            <span className='text-md text-green'>{available} left in stock</span>
+                            <span className='text-md text-red'>{available} left in stock</span>
 
                             {/* color and size section      */}
                             <div class="flex flex-row item-start mt-6 items-center pb-5  mb-5">
@@ -166,9 +166,9 @@ const ShoeDetails = () => {
                                 </div>
                                 <div class="flex items-center">
                                     <span class="mr-3">Color</span>
-                                    <button class="border-2 bg-green rounded-full w-6 h-6 focus:outline-none"></button>
-                                    <button class="border-2 bg-black ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                                    <button class="border-2 bg-base ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                                    <button class="border-2 bg-white rounded-full w-6 h-6 focus:outline-none"></button>
+                                    <button class="border-2 bg-blue ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                                    <button class="border-2 bg-red ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
                                 </div>
                             </div>
 
@@ -200,9 +200,9 @@ const ShoeDetails = () => {
                                     <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
                                 </form>
 
-                                <button onClick={deliveryProduct} className="btn my-3 bg-green ">Delivered</button>
-                                <button onClick={addItemPage} className="btn my-3 bg-head ">Add new Item</button>
-                                <button onClick={manageInventory} className="btn bg-base"> Manage Inventory</button>
+                                <button onClick={deliveryProduct} className="btn my-3 bg-blue ">Delivered</button>
+                                <button onClick={addItemPage} className="btn my-3 bg-base1 ">Add new Item</button>
+                                <button onClick={manageInventory} className="btn bg-red"> Manage Inventory</button>
                             </div>
 
                         </div>
