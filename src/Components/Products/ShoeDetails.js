@@ -23,7 +23,9 @@ const ShoeDetails = () => {
 
     // restockQuantity
     const onSubmit = formInfo => {
-        console.log(formInfo.restockQuantity)
+        const input = JSON.parse(formInfo.restockQuantity)
+        const restockQuantity = input + JSON.parse(available)
+        // console.log(restockQuantity)
 
         const product = {
             name: name,
@@ -32,12 +34,12 @@ const ShoeDetails = () => {
             gender: gender,
             originalPrice: originalPrice,
             discountPrice: discountPrice,
-            available: formInfo.restockQuantity,
+            available: restockQuantity,
             imgUrl: imgUrl,
             discountRoundPrice: discountRoundPrice,
             // review: review,
         }
-        console.log('tasklist', product);
+        // console.log('tasklist', product);
 
 
         const url = `https://pure-shore-88854.herokuapp.com/allshoes/${productID}`;
@@ -60,7 +62,7 @@ const ShoeDetails = () => {
     }
 
     const deliveryBtnDecrease = available - 1;
-    console.log(deliveryBtnDecrease);
+    // console.log(deliveryBtnDecrease);
 
     // delivey btn decrease product quantity by one  
     const deliveryProduct = () => {
@@ -201,11 +203,11 @@ const ShoeDetails = () => {
                                     </div>
 
                                     {/* Sbmit Button */}
-                                    <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
+                                    <input className='btn bg-base  text-white' type="submit" value="Restock Stocks" />
                                 </form>
 
                                 <button onClick={() => deliveryProduct()} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
-                                <Link to="/allshoes" className="btn mb-3 bg-base1 ">Add new Item</Link>
+                                <Link to="/addshoe" className="btn mb-3 bg-base1 ">Add new Item</Link>
                                 <Link to='/manageshoes' className="btn bg-red"> Manage Inventory</Link>
                             </div>
 

@@ -9,6 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import hero1 from '../../assest/HeroImg/01hero.png';
 import hero2 from '../../assest/HeroImg/02hero.png';
 import hero3 from '../../assest/HeroImg/03hero.png';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -36,8 +37,8 @@ const Hero = () => {
                             <div><p className="heroP  pb-4 "> Lorem ipsum dolor amet consectetur <br />adipisicing Nobis, excepturi. </p></div>
 
                             <div className=" flex justify-start">
-                                <button
-                                    style={{ backgroundColor: '#850b56' }} className="btn drop-shadow-xl heroBtn text-italic btn-sm bg-base">Buy now</button>
+                                <Link to='/allshoes'
+                                    style={{ backgroundColor: '#850b56' }} className="btn drop-shadow-xl heroBtn text-italic btn-sm bg-base">Buy now</Link>
                             </div>
                         </div>
                     </ div>
@@ -52,8 +53,8 @@ const Hero = () => {
                             <div><p className="heroP text-white pb-4 "> Lorem ipsum dolor amet consectetur <br />adipisicing Nobis, excepturi. </p></div>
 
                             <div className=" flex justify-start">
-                                <button
-                                    style={{ backgroundColor: '#232324' }} className="btn heroBtn text-italic btn-sm bg-black">Buy now</button>
+                                <Link to='/allshoes'
+                                    style={{ backgroundColor: '#232324' }} className="btn heroBtn text-italic btn-sm bg-black">Buy now</Link>
                             </div>
                         </div>
                     </ div>
@@ -70,8 +71,8 @@ const Hero = () => {
 
                             </div>
                             <div className=" flex justify-end">
-                                <button
-                                    style={{ backgroundColor: '#4c4029' }} className="btn heroBtn btn-sm ">Buy now</button>
+                                <Link to='/allshoes'
+                                    style={{ backgroundColor: '#4c4029' }} className="btn heroBtn btn-sm ">Buy now</Link>
                             </div>
                         </div>
                     </ div>
