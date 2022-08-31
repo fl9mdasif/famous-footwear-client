@@ -1,6 +1,6 @@
 import React from 'react';
-import Navlogo from '../../assest/Navlogo.png'
-
+import Navlogo from '../../assest/Navlogo.png';
+import '../../App.css'
 const Footer = () => {
     return (
         <>
@@ -51,7 +51,8 @@ const Footer = () => {
                                 </li>
                             </nav>
                         </div>
-                        <div class="lg:w-1/4 md:w-1/3 w-full px-4">
+
+                        <div class="lg:w-1/4 fhidden md:w-1/3 w-full px-4">
                             <h2 class="title-font inline-block font-medium text-gray-900 tracking-widest text-sm mb-3">MENUS</h2>
                             <nav class="list-none mb-10">
                                 <li>
@@ -68,7 +69,8 @@ const Footer = () => {
                                 </li>
                             </nav>
                         </div>
-                        <div class="lg:w-1/4 md:w-1/3 w-full px-4">
+
+                        <div class="lg:w-1/4 fhidden md:w-1/3 w-full px-4">
                             <h2 class="title-font inline-block font-medium text-gray-900 tracking-widest text-sm mb-3">MENUS</h2>
                             <nav class="list-none mb-10">
                                 <li>

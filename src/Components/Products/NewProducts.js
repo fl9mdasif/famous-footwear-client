@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 const NewProducts = () => {
 
     const { isLoading, error, data: products } = useQuery(['shoeData'], () =>
-        fetch(`http://localhost:5000/allShoes`).then(res =>
+        fetch(`https://pure-shore-88854.herokuapp.com/allShoes`).then(res =>
             res.json())
     )
     if (isLoading) return <Loading />

@@ -24,7 +24,7 @@ const Blog = ({ blog, refetch }) => {
         }
         // console.log('blogview', blogViews);
 
-        const url = `http://localhost:5000/blogs/${_id}`;
+        const url = `https://pure-shore-88854.herokuapp.com/blogs/${_id}`;
         // console.log(url)
 
         //put updateOne

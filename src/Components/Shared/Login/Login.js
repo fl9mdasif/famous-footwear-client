@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Loading'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import googlePng from './google.png';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,7 +19,7 @@ const Login = () => {
 
     //resetPassword
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    const emailRef = useRef('');
+    // const emailRef = useRef('');
 
 
     let signInError;
@@ -48,29 +49,28 @@ const Login = () => {
     //handle password reset
     const resetPassword = async () => {
         // const email = data.email;
-        const email = emailRef.current.value;
+        const email = document.getElementById("email").value;
 
         console.log(email)
         if (email) {
             await sendPasswordResetEmail(email);
             toast('Sent email > inbox or Trash Bin ');
         }
-        // else {
-        //     toast('please enter your email address');
-        // }
+        else {
+            toast('please enter your email address');
+        }
     }
 
     return (
         <div className='mt- flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <h2 className="text-center text-base1 text-2xl font-bold">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
-
                             <input
-                                ref={emailRef}
+                                id="email"
                                 name="email"
                                 type="email"
                                 placeholder="Your Email"
@@ -115,16 +115,20 @@ const Login = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs bg-primary text-white' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs bg-base text-white' type="submit" value="Login" />
                     </form>
-                    <p className='text-head'>Forget Password?<button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
+                    <p className='text-red'>Forget Password?<button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
                     <ToastContainer />
                     <p className='text-head'><small>New to To-Do-app <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
-                    >Continue with Google</button>
+                    >
+                        <img className="h-8 w-8 rounded-full mr-3 "
+                            src={googlePng} alt="/" />
+                        Continue with Google
+                    </button>
                 </div>
             </div>
         </div >

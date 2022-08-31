@@ -5,7 +5,7 @@ import Product from './Product';
 const AllShoes = () => {
 
     const { isLoading, error, data: products } = useQuery(['allShoeData'], () =>
-        fetch('http://localhost:5000/allshoes').then(res =>
+        fetch('https://pure-shore-88854.herokuapp.com/allshoes').then(res =>
             res.json())
     )
     if (isLoading) return <Loading />

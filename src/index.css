@@ -22,10 +22,11 @@ code {
 li {
   font-size: 18px;
   font-weight: 500;
+  color: #155e4d;
 }
 
 li:hover {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #4cdab9;
 }
 
 .card-body {

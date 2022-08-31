@@ -8,7 +8,7 @@ const ManageProduct = () => {
 
 
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
-        fetch(`http://localhost:5000/allshoes`).then(res =>
+        fetch(`https://pure-shore-88854.herokuapp.com/allshoes`).then(res =>
             res.json())
     )
     if (isLoading) return <Loading />
@@ -18,7 +18,7 @@ const ManageProduct = () => {
     const manageProductToDelete = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            const url = `http://localhost:5000/allshoes/${id}`;
+            const url = `https://pure-shore-88854.herokuapp.com/allshoes/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

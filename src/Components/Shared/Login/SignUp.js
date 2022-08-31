@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
 import { ToastContainer } from 'react-toastify';
+import googlePng from './google.png'
 
 const SignUp = () => {
 
@@ -48,7 +49,7 @@ const SignUp = () => {
         <div className='mt- flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+                    <h2 className="text-center text-base1 text-2xl font-bold">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -115,14 +116,16 @@ const SignUp = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full bg-primary max-w-xs text-white' type="submit" value="Sign Up" />
+                        <input className='btn w-full bg-base max-w-xs text-white' type="submit" value="Sign Up" />
                     </form>
                     <p className='text-head'><small className='text-head' >Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
-                    >Continue with Google</button>
+                    >
+                        <img className="h-8 w-8 rounded-full mr-3 "
+                            src={googlePng} alt="/" />Continue with Google</button>
                 </div>
             </div>
             <ToastContainer />

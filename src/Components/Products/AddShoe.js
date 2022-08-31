@@ -52,7 +52,7 @@ const AddShoe = () => {
                     }
                     console.log('product', product);
 
-                    const url = `http://localhost:5000/addShoe`;
+                    const url = `https://pure-shore-88854.herokuapp.com/addShoe`;
 
                     fetch(url, {
                         method: 'POST',

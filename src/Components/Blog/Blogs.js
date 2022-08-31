@@ -7,7 +7,7 @@ import Blog from './Blog';
 const Blogs = () => {
 
     const { isLoading, error, data: blogs, refetch } = useQuery(['blogData'], () =>
-        fetch('http://localhost:5000/blogs').then(res =>
+        fetch('https://pure-shore-88854.herokuapp.com/blogs').then(res =>
             res.json())
     )
     if (isLoading) return <Loading />
@@ -15,7 +15,7 @@ const Blogs = () => {
     // console.log(blogs)
     return (
         <section class="text-gray-600 body-font">
-            <div className="py-3 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">BLOG{blogs.length}</div>
+            <div className="py-3 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">BLOG</div>
 
             <div class="container px-5 py-2 mx-auto">
                 <div class="flex flex-wrap -m-4 ">

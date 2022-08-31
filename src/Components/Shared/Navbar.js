@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const menuItems =
         <>
-            <li><Link to='' href="#2">Home</Link></li>
+            <li><Link to='/' href="">Home</Link></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
             <li><Link to='/blogs' >Blog</Link></li>
             {/* <li><Link to='/prac' >Practice</Link></li> */}
@@ -112,6 +112,7 @@ const Navbar = () => {
                                         <span> <img style={{
                                             height: '42px',
                                             width: '42px',
+                                            borderRadius: '50%'
                                         }}
                                             referrerpolicy="no-referrer"
                                             src={photoUrl ? photoUrl : dummyUserPhoto} alt="" />  </span>

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
-
+import './ProductStyle.css'
 
 
 const ShoeDetails = () => {
@@ -13,7 +13,7 @@ const ShoeDetails = () => {
     const navigate = useNavigate()
     const { productID } = useParams();
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
-        fetch(`http://localhost:5000/allshoes/${productID}`).then(res =>
+        fetch(`https://pure-shore-88854.herokuapp.com/allshoes/${productID}`).then(res =>
             res.json())
     )
     if (isLoading) return <Loading />
@@ -40,7 +40,7 @@ const ShoeDetails = () => {
         console.log('tasklist', product);
 
 
-        const url = `http://localhost:5000/allshoes/${productID}`;
+        const url = `https://pure-shore-88854.herokuapp.com/allshoes/${productID}`;
 
         //put updateOne
         fetch(url, {
@@ -79,7 +79,7 @@ const ShoeDetails = () => {
         console.log('tasklist', product);
 
 
-        const url = `http://localhost:5000/allshoes/${productID}`;
+        const url = `https://pure-shore-88854.herokuapp.com/allshoes/${productID}`;
 
         //put updateOne
         fetch(url, {
@@ -106,18 +106,20 @@ const ShoeDetails = () => {
     }
     return (
         <>
-            <section class="text-gray-600 body-font overflow-hidden">
+            <section class="text-gray-600 py-4 body-font overflow-hidden">
                 <div class="container px-5 mx-auto ">
-                    <div class="lg:w-4/5 mx-auto flex flex-wrap ">
-                        <img alt="ecommerce" class="lg:w-1/2 w-full border  lg:h-96 h-64 object-cover object-center rounded"
+                    <div class="lg:w-4/5 mx-auto image-box  flex  flex-wrap ">
+
+                        <img alt="ecommerce" class="productDetailsImg border-base lg:w-1/2 w-full lg:h-auto  object-contain object- rounded"
                             src={imgUrl} />
+
 
                         <div class=" border-gray-100 lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <p class="text-sm pb-2 title-font text-gray-500 uppercase tracking-widest">{brand}</p>
-                            <h1 class=" text-3xl title-font font-medium mb-1">{name}</h1>
+                            <h1 class=" text-3xl title-font font-medium">{name}</h1>
 
                             {/* Review section */}
-                            <div class="flex mb-4 ">
+                            <div class="flex mb-2 ">
                                 <span class="flex items-center">
                                     <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-gold" viewBox="0 0 24 24">
                                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -143,20 +145,21 @@ const ShoeDetails = () => {
 
 
                             {/* price   */}
-                            <div class="flex items-center ">
+                            <div class="flex mb-2 items-center ">
                                 <span style={{ color: '#4c4c4cc7' }} class="title-font pr-4 line-through font-medium text-xl"><span>$</span>{originalPrice}</span>
                                 <span class="title-font font-medium text-3xl  text-base"><span>$</span>{discountPrice}</span>
                                 <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
 
                             </div>
+
                             {/* Availability */}
-                            <h1 className="pt-2 text-2xl inline-block mr-3">Availability: </h1>
+                            <h1 className=" text-2xl inline-block mr-3">Availability: </h1>
                             <span className='text-md text-red'>{available} left in stock</span>
 
                             {/* color and size section      */}
-                            <div class="flex flex-row item-start mt-6 items-center pb-5  mb-5">
+                            <div class="flex flex-row item-start mt-2 items-center   mb-5">
                                 <div class=" items-center">
-                                    <select class="select select-primary w-22 mr-4 max-w-xs">
+                                    <select class="select select-primary w-22  mr-4 max-w-xs">
                                         <option disabled selected>Size</option>
                                         <option>9</option>
                                         <option>10</option>
@@ -200,8 +203,8 @@ const ShoeDetails = () => {
                                     <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
                                 </form>
 
-                                <button onClick={deliveryProduct} className="btn my-3 bg-blue ">Delivered</button>
-                                <button onClick={addItemPage} className="btn my-3 bg-base1 ">Add new Item</button>
+                                <button onClick={deliveryProduct} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
+                                <button onClick={addItemPage} className="btn mb-3 bg-base1 ">Add new Item</button>
                                 <button onClick={manageInventory} className="btn bg-red"> Manage Inventory</button>
                             </div>
 

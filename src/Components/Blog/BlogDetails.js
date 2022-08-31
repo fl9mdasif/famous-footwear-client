@@ -8,7 +8,7 @@ const BlogDetails = () => {
     // const navigate = useNavigate()
     const { blogID } = useParams();
     const { isLoading, error, data: blogs } = useQuery(['shoeData'], () =>
-        fetch(`http://localhost:5000/blogs/${blogID}`).then(res =>
+        fetch(`https://pure-shore-88854.herokuapp.com/blogs/${blogID}`).then(res =>
             res.json())
     )
     if (isLoading) return 'Loading...'
