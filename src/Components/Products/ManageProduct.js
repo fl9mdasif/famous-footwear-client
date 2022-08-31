@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const ManageProduct = () => {
 
 
-    const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
+    const { isLoading, error, data: product } = useQuery(['manageShoeData'], () =>
         fetch(`https://pure-shore-88854.herokuapp.com/allshoes`).then(res =>
             res.json())
     )
@@ -26,13 +26,13 @@ const ManageProduct = () => {
                 .then(data => {
                     console.log(data)
                     toast.error('product deleted from All shoes')
-                    refetch()
+                    // refetch()
 
                 })
         }
     };
     return (
-        <div className="overflow-x-auto">
+        <div className="">
             <div className="py-10 font-bold text-center text-base1 sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
             <div>
                 <p className='text-red '>Only Admin could manage these items. You could Add / Manage your own items on

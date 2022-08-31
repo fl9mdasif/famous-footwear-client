@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query'
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
@@ -10,7 +10,7 @@ import './ProductStyle.css'
 const ShoeDetails = () => {
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const { productID } = useParams();
     const { isLoading, error, data: product, refetch } = useQuery(['shoeData'], () =>
         fetch(`https://pure-shore-88854.herokuapp.com/allshoes/${productID}`).then(res =>
@@ -98,12 +98,12 @@ const ShoeDetails = () => {
         reset()
     }
 
-    function manageInventory() {
-        navigate('/manageshoes')
-    }
-    function addItemPage() {
-        navigate('/addShoe')
-    }
+    // const manageInventory = () => {
+    //     navigate('/manageshoes')
+    // }
+    // const addItemPage = () => {
+    //     navigate('/addShoe')
+    // }
     return (
         <>
             <section class="text-gray-600 py-4 body-font overflow-hidden">
@@ -203,9 +203,9 @@ const ShoeDetails = () => {
                                     <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
                                 </form>
 
-                                <button onClick={deliveryProduct} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
-                                <button onClick={addItemPage} className="btn mb-3 bg-base1 ">Add new Item</button>
-                                <button onClick={manageInventory} className="btn bg-red"> Manage Inventory</button>
+                                <button onclick={deliveryProduct} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
+                                <Link to="/allshoes" className="btn mb-3 bg-base1 ">Add new Item</Link>
+                                <Link to='/manageshoes' className="btn bg-red"> Manage Inventory</Link>
                             </div>
 
                         </div>

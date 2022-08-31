@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const menuItems =
         <>
-            <li><Link to='/' href="">Home</Link></li>
+            <li><a href='/'>Home</a></li>
             <li><Link to='/allshoes' >Shoes</Link></li>
             <li><Link to='/blogs' >Blog</Link></li>
             {/* <li><Link to='/prac' >Practice</Link></li> */}

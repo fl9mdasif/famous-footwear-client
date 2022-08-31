@@ -10,7 +10,7 @@ const MyItems = () => {
     const [user] = useAuthState(auth)
     const userEmail = user.reloadUserInfo.email;
 
-    const { isLoading, error, data: products, refetch } = useQuery(['shoeData'], () =>
+    const { isLoading, error, data: products, refetch } = useQuery(['myShoeData'], () =>
         fetch(`https://pure-shore-88854.herokuapp.com/userAddedItems`).then(res =>
             res.json())
     )
