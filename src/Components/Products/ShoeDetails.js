@@ -60,10 +60,11 @@ const ShoeDetails = () => {
     }
 
     const deliveryBtnDecrease = available - 1;
-    // console.log(deliveryBtnDecrease);
+    console.log(deliveryBtnDecrease);
 
     // delivey btn decrease product quantity by one  
-    function deliveryProduct() {
+    const deliveryProduct = () => {
+
         const product = {
             name: name,
             description: description,
@@ -203,7 +204,7 @@ const ShoeDetails = () => {
                                     <input className='btn bg-base  text-white' type="submit" value="Upload Shoe" />
                                 </form>
 
-                                <button onclick={deliveryProduct} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
+                                <button onClick={() => deliveryProduct()} className="btn my-3 bg-blue ">PLACE DELIVERY</button>
                                 <Link to="/allshoes" className="btn mb-3 bg-base1 ">Add new Item</Link>
                                 <Link to='/manageshoes' className="btn bg-red"> Manage Inventory</Link>
                             </div>
