@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 
 
@@ -15,11 +16,10 @@ const ShoeDetails = () => {
         fetch(`http://localhost:5000/allshoes/${productID}`).then(res =>
             res.json())
     )
-    if (isLoading) return 'Loading...'
+    if (isLoading) return <Loading />
     if (error) return 'An error has occurred: ' + error.message
     // console.log(products)
     const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product
-    // console.log(product);
 
     // restockQuantity
     const onSubmit = formInfo => {
@@ -109,7 +109,7 @@ const ShoeDetails = () => {
             <section class="text-gray-600 body-font overflow-hidden">
                 <div class="container px-5 mx-auto ">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap ">
-                        <img alt="ecommerce" class="lg:w-1/2 w-full  lg:h-96 h-64 object-cover object-center rounded"
+                        <img alt="ecommerce" class="lg:w-1/2 w-full border  lg:h-96 h-64 object-cover object-center rounded"
                             src={imgUrl} />
 
                         <div class=" border-gray-100 lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

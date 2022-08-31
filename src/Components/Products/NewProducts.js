@@ -5,14 +5,15 @@ import "swiper/css/navigation";
 import { useQuery } from '@tanstack/react-query'
 import Product from './Product';
 import { Link } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 
 const NewProducts = () => {
 
-    const { isLoading, error, data: products, refetch } = useQuery(['shoeData'], () =>
+    const { isLoading, error, data: products } = useQuery(['shoeData'], () =>
         fetch(`http://localhost:5000/allShoes`).then(res =>
             res.json())
     )
-    if (isLoading) return 'Loading...'
+    if (isLoading) return <Loading />
     if (error) return 'An error has occurred: ' + error.message
     return (
 

@@ -14,8 +14,8 @@ import MyItems from './Components/Products/MyItems';
 import NotFound from './Components/Shared/NotFound';
 import ManageProduct from './Components/Products/ManageProduct';
 import PrivateAuth from './Components/Shared/Login/PrivateAuth';
-import Blog from './Components/Blog/Blog';
 import BlogDetails from './Components/Blog/BlogDetails';
+import Blogs from './Components/Blog/Blogs';
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/blogs' element={<Blog />} />
+        <Route path='/blogs' element={<Blogs />} />
 
         <Route path='/blogDetails/:blogID' element={
           <BlogDetails />

@@ -2,6 +2,7 @@ import { toast } from 'react-toastify';
 import { useQuery } from '@tanstack/react-query'
 import './ProductStyle.css'
 import { Link } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 
 const ManageProduct = () => {
 
@@ -10,7 +11,7 @@ const ManageProduct = () => {
         fetch(`http://localhost:5000/allshoes`).then(res =>
             res.json())
     )
-    if (isLoading) return 'Loading...'
+    if (isLoading) return <Loading />
     if (error) return 'An error has occurred: ' + error.message
 
     // Delete Single Shoe

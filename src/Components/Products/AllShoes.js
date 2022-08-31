@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../Shared/Loading';
 import Product from './Product';
 
 const AllShoes = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/allshoes')
-            .then(result => result.json())
-            .then(data => setProducts(data))
-    }, []);
+
+    const { isLoading, error, data: products } = useQuery(['allShoeData'], () =>
+        fetch('http://localhost:5000/allshoes').then(res =>
+            res.json())
+    )
+    if (isLoading) return <Loading />
+    if (error) return 'An error has occurred: ' + error.message
+    // console.log(products)
 
     return (
         <div className=" container mx-auto w-100 ">

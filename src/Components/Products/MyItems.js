@@ -3,19 +3,18 @@ import { useQuery } from '@tanstack/react-query'
 import './ProductStyle.css'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyItems = () => {
 
     const [user] = useAuthState(auth)
     const userEmail = user.reloadUserInfo.email;
 
-
-
     const { isLoading, error, data: products, refetch } = useQuery(['shoeData'], () =>
         fetch(`http://localhost:5000/userAddedItems`).then(res =>
             res.json())
     )
-    if (isLoading) return 'Loading...'
+    if (isLoading) return <Loading />
     if (error) return 'An error has occurred: ' + error.message
     // console.log(products)
     // const { name, brand, description, available, gender, originalPrice, discountPrice, imgUrl, discountRoundPrice } = product

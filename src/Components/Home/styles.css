@@ -42,7 +42,18 @@
 
     .card-body {
         width: 340px;
+        padding-left: 30px !important;
     }
+
+    .card-body p {
+        font-weight: 600 !important;
+    }
+
+    .cardH2 {
+        font-size: 19px;
+        font-weight: 600
+    }
+
 
     .offer-div {
         top: 30px;
