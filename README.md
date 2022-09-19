@@ -1,15 +1,26 @@
-# Create React App Start-up project setup 
+# Famous-footwear-client [https://famous-footwear-warehouse.web.app](https://famous-footwear-warehouse.web.app/)
 
-## `Clone the repository and start working immediately with react`
+* FFW is a global brands shoe warehouse website.
+* Protected routes for user, Sign-up & Login authentication to buy products
+* Real time product details, update-quantity, add-item, manage product
+* Private route for product details and buy product
 
-## `Technologies` I have installed in the package
 
+## `Technologies` are being used
+
+* React.js
 * React-Router-Dom
+* JavaScript
 * Tailwind Css
+* Node.js
+* Express.js
+* MongoDB
 * DaisyUI
 * Firebase
-* React-firebase-hooks
 * Tanstack/react-query
 * React-hook-form
-* React-toastify
-* Boxicons
+* swiper.js
+* Boxicons 
+* Heroku 
+* ETC
+
